@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculator base</title>
+</head>
+<body>
+<style>
+    main {
+        width: 500px;
+        height: 500px;
+        margin: 0 auto;
+    }
+
+    .result {
+        width: 250px;
+        height: 25px;
+        border: 1px solid #ccc;
+        text-align: right;
+    }
+
+    .number {
+        margin-top: 20px;
+        margin-left: 20px;
+    }
+    .btn {
+        width: 50px;
+        height: 50px;
+    }
+
+    .number_2, .number_3 {
+        margin: 5px 0;
+    }
+</style>
+<main>
+    <input type="text" class="result">
+    <div class="number">
+        <div class="number_1">
+            <button class="btn" value="1" onclick="inputValue(this.value)">1</button>
+            <button class="btn" value="2" onclick="inputValue(this.value)">2</button>
+            <button class="btn" value="3" onclick="inputValue(this.value)">3</button>
+            <button class="btn" value="+" onclick="inputValue(this.value)">+</button>
+        </div>
+        <div class="number_2">
+            <button class="btn" value="4" onclick="inputValue(this.value)">4</button>
+            <button class="btn" value="5" onclick="inputValue(this.value)">5</button>
+            <button class="btn" value="6" onclick="inputValue(this.value)">6</button>
+            <button class="btn" value="-" onclick="inputValue(this.value)">-</button>
+        </div>
+        <div class="number_3"><button class="btn" value="7" onclick="inputValue(this.value)">7</button>
+            <button class="btn" value="8" onclick="inputValue(this.value)">8</button>
+            <button class="btn" value="9" onclick="inputValue(this.value)">9</button>
+            <button class="btn" value="*" onclick="inputValue(this.value)">*</button>
+        </div>
+        <div class="number_4">
+            <button class="btn" onclick="clean()" value="C" >C</button>
+            <button class="btn" value="0" onclick="inputValue(this.value)">0</button>
+            <button class="btn" onclick="submit()" value="=">=</button>
+            <button class="btn" value="/" onclick="inputValue(this.value)">/</button>
+        </div>
+    </div>
+
+</main>
+<script>
+    let view = document.querySelector('.result');
+    function inputValue(value) {
+        view.value += value;
+    }
+    function submit() {
+        let result = eval(view.value);
+        view.value = result;
+    }
+    function clean() {
+        view.value="";
+    }
+</script>
+    }
+</body>
+</html>
